@@ -1,15 +1,90 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Webpage</title>
+    <title>Interactive Login Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .login-box {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+            width: 320px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 20px; /* Required font size */
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            font-size: 18px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Webpage</h1>
-    <p>This is a simple HTML webpage.</p>
 
-    <img src="image.jpg" alt="Sample Image" width="300">
-    <br><br>
+<div class="login-box">
+    <h2>Login Form</h2>
 
-    <a href="https://www.google.com">Visit Google</a>
+    <form onsubmit="return validateForm()">
+        <label for="username">Username</label>
+        <input type="text" id="username" placeholder="Enter Username">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="Enter Password">
+
+        <button type="submit">Login</button>
+    </form>
+</div>
+
+<script>
+function validateForm() {
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    if (username === "" || password === "") {
+        alert("Please enter both Username and Password.");
+        return false;
+    }
+
+    alert("Login Successful!");
+    return true;
+}
+</script>
+
 </body>
-</html>
+            </html>
